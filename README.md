@@ -1,0 +1,1 @@
+# find-the-nearest-smaller-element-G-i-for-every-element-A-i-in-the-array-such-that-the-element-has-
