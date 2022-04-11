@@ -1,0 +1,82 @@
+#finding nearest smaller element G[i] for every element A[i] 
+#in the array such that the element has an index smaller than i
+# Python3 implementation of efficient 
+# algorithm to find smaller element
+# on left side
+
+import math as mt
+ 
+# Prints smaller elements on left 
+# side of every element
+
+def printPrevSmaller(arr, n):
+ 
+
+    # Create an empty stack
+
+    S = list()
+ 
+
+    # Traverse all array elements
+
+    for i in range(n):
+
+     
+
+        # Keep removing top element from S 
+
+        # while the top element is greater 
+
+        # than or equal to arr[i]
+
+        while (len(S) > 0 and S[-1] >= arr[i]):
+
+            S.pop()
+ 
+
+        # If all elements in S were greater
+
+        # than arr[i]
+
+        if (len(S) == 0):
+
+            print("-1", end = " ")
+
+        else: # Else print the nearest 
+
+              # smaller element
+
+            print(S[-1], end = " ")
+ 
+
+        # Push this element
+
+        S.append(arr[i])
+
+
+# Driver Code
+# number of elements
+
+n = int(input())
+ 
+# Below line read inputs from user using map() function 
+
+arr = list(map(int,input().strip().split()))[:n]
+ 
+
+printPrevSmaller(arr, n)
+#test case
+#Sample Input 0
+
+#8
+#39 27 11 4 24 32 32 1
+#Sample Output 0
+
+#-1 -1 -1 -1 4 24 24 -1
+#Sample Input 1
+
+#4
+#11 13 21 3
+#Sample Output 1
+
+#-1 11 13 -1
